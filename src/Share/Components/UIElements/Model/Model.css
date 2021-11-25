@@ -1,0 +1,41 @@
+.model {
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    width:80%;
+    padding: 20px;
+    position: fixed;
+    background-color: #ffffff;
+    top: 10px;
+    left: 10%;
+    transition: all 0.3s
+    
+
+}
+.model_fade-enter {
+    transform: translateY(-100%);
+  }
+
+.model_body {
+        flex: 1;
+    }
+.model_footer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 10px;
+    }    
+
+.model_fade-enter-active {
+    /* opacity: 1;
+    top: 10%; */
+    transform: translateY(0); 
+    
+}
+
+.model_fade-exit-active {
+     transform: translateY(-100%);
+}
+
+
+
+

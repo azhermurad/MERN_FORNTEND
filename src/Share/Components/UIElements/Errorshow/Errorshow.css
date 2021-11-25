@@ -1,0 +1,18 @@
+.error__show--container {
+    width: 100%;
+    padding: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    overflow-wrap: break-word;
+    margin: 10px 0px;
+
+}
+
+.error__items{
+    font-weight: bold;
+    display: block;
+    padding: 2px 0px;
+    line-height: 20px;
+
+}

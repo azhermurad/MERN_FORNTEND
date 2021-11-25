@@ -1,0 +1,19 @@
+.header-menu__navlinks{
+    flex: 1;
+}
+.header-menu__navlinks .navlink-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.login__btn .button {
+    /* padding-left: 10px; */
+    border: 1px solid #fff;
+    margin-right: 0px;
+}
+@media (max-width: 790px) {
+    .header-menu__navlinks {
+        display: none;
+    }
+} 
+

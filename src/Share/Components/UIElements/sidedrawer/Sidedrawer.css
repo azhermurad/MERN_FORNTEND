@@ -1,0 +1,59 @@
+.sidedrawer__list {
+    z-index: 3;
+    width: 275px;
+    height: 100vh;
+    background-color: #DAA03DFF;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding-top: 90px;
+    transition: all 0.3s
+    
+};
+.draweropen{
+    /* transform: translateX(0);
+    opacity: 1; */
+    animation: openDrawerAnimation 2s forwards;
+}
+.drawerclose {
+   animation: closeDrawerAnimation 2s forwards;
+}
+/* .model-fade-enter {
+
+} */
+.sidedrawer-fade-enter-active {
+    animation: openDrawerAnimation 0.2s forwards;
+
+}
+/* .model-fade-exit {
+
+} */
+.sidedrawer-fade-exit-active {
+    animation: closeDrawerAnimation 0.2s forwards;
+}
+@keyframes openDrawerAnimation {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes closeDrawerAnimation {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+/* .sidedrawer__nav {
+
+} */

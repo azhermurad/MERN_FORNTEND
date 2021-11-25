@@ -1,0 +1,17 @@
+.main-header__container {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    background-color: #DAA03DFF;
+    color: 	#FFFFFF;
+    max-height: 90px;
+    padding: 10px 20px;
+    
+}
+@media (max-width: 790px) {
+    .main-header__container {
+        justify-content: space-between;
+    }
+}

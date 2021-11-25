@@ -1,0 +1,41 @@
+
+.form-group {
+    padding: 10px 0px;
+    display: flex; 
+    flex-direction: column; 
+    transition: all 1s;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 26%);
+}
+.form-label {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.form-group__invalid input,
+.form-group__invalid textarea {
+    border: 2px solid red;
+}
+.form-group__invalid label,
+.form-group__invalid span {
+    color: red;
+}
+.form-group__valid input,
+.form-group__valid textarea {
+    border: 2.5px solid green;
+}
+.error_invalid {
+    display: inline-block;
+    padding: 5px 0px;
+    font-size: 10px;
+}

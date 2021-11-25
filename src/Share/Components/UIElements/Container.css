@@ -1,0 +1,11 @@
+.Container {
+    width: 100%;
+    margin: auto;
+    padding: 10px
+}
+
+@media (min-width: 769px){
+    .Container {
+        width: 80%
+    }
+}

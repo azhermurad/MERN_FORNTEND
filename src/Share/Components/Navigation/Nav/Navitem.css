@@ -1,0 +1,21 @@
+.navlink-item {
+    padding: 10px;
+}
+.navlink-item a {
+    color: #FFFFFF ;
+    text-decoration: none;
+    font-size: 17px;
+    /* font-size: larger; */
+    /* background-color: aqua; */
+
+}
+
+.navlink-item a:hover,
+.navlink-item a.active {
+    color: gray
+}
+
+
+.sidedrawer__list .navlink-item {
+    padding-left: 30px;
+}

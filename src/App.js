@@ -1,25 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, Suspense } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
 
-function App() {
+import MainHeader from './Share/Components/Navigation/MainHeader';
+// import Users from './Users/Pages';
+// import NewPlace from './Places/Pages';
+// import UpdatePlace from './Places/Pages/UpdatePlace';
+// import UserPlaces from './Places/Pages/userPlaces';
+import Auth from './Users/Pages/Auth';
+import { Cotext } from './Context/auth';
+import classes from './App.module.css';
+import Loader from './Share/Components/UIElements/Loader';
+
+// lazy loading  
+const Users = React.lazy(()=> import('./Users/Pages'));
+const UpdatePlace = React.lazy(()=> import('./Places/Pages/UpdatePlace'));
+const NewPlace = React.lazy(()=> import('./Places/Pages'));
+const UserPlaces = React.lazy(()=> import('./Places/Pages/userPlaces'));
+
+const App = () => {
+  const auth = useContext(Cotext);
+  let route;
+  if (auth.isLoggedIn) {
+    route = (
+      <Switch>
+        <Route path="/" exact>
+          <Users />
+        </Route>
+        <Route path="/:userId/places" exact >
+          <UserPlaces />
+        </Route>
+        <Route path="/places/new" exact>
+          <NewPlace/>
+        </Route>
+        <Route path="/places/:placeId">
+          <UpdatePlace />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else {
+    route = (
+      <Switch>
+        <Route path="/" exact>
+          <Users />
+        </Route>
+        <Route path="/:userId/places" exact >
+          <UserPlaces />
+        </Route>
+        <Route path="/auth">
+          <Auth />
+        </Route>
+        <Redirect to="/auth" />
+      </Switch>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router >
+        <MainHeader />
+        <Suspense fallback={<Loader/>}>
+          <main className={classes.main__container}>
+          {route}
+          </main>
+        </Suspense>
+      </Router>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,11 @@
+.form_auth--title {
+    color: #DAA03DFF;
+}
+.form__auth--switchbtn {
+    margin: 15px 0px;
+    
+}
+.form__auth--switchbtn span {
+    padding: 4px 7px;
+    border-bottom: 2px solid #DAA03DFF;
+}
